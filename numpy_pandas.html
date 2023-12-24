@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html data-bs-theme="auto">
+
+<head>
+  <script src="js/color-modes.js"></script>
+  <meta charset="UTF-8">
+  <title>Помощь Начинающим Pythonistam</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <!-- для темы -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <!-- Тема  -->
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">На главную</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <div class="container">
+    <div class="alert alert-danger" role="alert" style="margin-top: 10px;">
+      Всем привет, все так же предупреждаю, что и эту часть писал лично <b>Я !</b>, ошибки присутствуют )
+      Наслаждайтесь &hearts;
+    </div>
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="https://stepik.org/lesson/736294/step/1?unit=737909">Как обычно,
+            держите ссылку на курс, откуда брались основные
+            знания</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Воруем "!" </li>
+      </ol>
+    </nav>
+  </div>
+
+
+  <!-- конспект -->
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-2">
+        <!-- 1 of 3 -->
+      </div>
+      <div class="col-8 text-start">
+        <!-- 2 of 3 (wider) -->
+        <h1 class="text-center"> Numpy </h1>
+        <div>
+          <p>
+          <h6>Для началы работы нужно импортировать Numpy. Делается это при помощи команды import numpy as np</h6>
+          </p>
+          <p>
+            np.array(['какой-то лист']) - поздравляю, мы получили первый массив. <br>
+            Функция len выводит кол-во вложенных списков <br>
+            md.shape([[1,2,3],[1,2,3]]) = (2 , 3) - кол-во подмасивов, и колличество элементов в каждом подмасиве <br>
+            md.dtype = (float64) - показывает, что все элменты являются типами floaat 64 (возвращает тип данных в
+            массиве) <br>
+            np.zeros(5) - отдает массив, с 5-ю нулями <br>
+            np.zeros((2, 3)) - отдает массив [[0,0,0],[0,0,0]] - двухмерный массив <br>
+            np.ones(4) - создает массив с 1-ми <br>
+            np.arange(10) = (0,1,2,3,4,5,6,7,8,9) <br>
+            np.full((2,3),8) - 2x3 массив со всеми значениями 8 <br>
+          </p>
+          <p>
+            md = np.array(lst, dtype='float64') - на основе существующего списка создает numpy массив с типом
+            float64<br>
+            md = arr1.astype(np.int64) - переписывает массив на массив с элментами типа int64 <br>
+            md - 1 = Из каждого элмента списка вычтет - 1 (т.е заменяет цикл) <br>
+            a = [1,2,3]; b = [2,3,4]; a > b = [False, False, False] - возвращает маску <br>
+          </p>
+          <p>
+          <h4>Срезы</h4>
+          md[3:5] - берет 3 и 4 значение из масива<br>
+          md[: , 2] - мы идем по каждому поднмножеству, и оттуда берем 2 элемент<br>
+          md[: , 1:3] - мы идем по каждому поднмножеству, и оттуда берем 1 и 2 элемент<br>
+          md[0:2 , 1:3] - мы берем 2 множества (1 и 2), и оттуда берем 1 и 2 элемент<br>
+          ~mask - инверсия (то что было True стало False) <br>
+          | - или, & - и <br>
+          <br>
+          md[[0,2,4]] - вытягивает 0, 2, и 4 строку. Нужно передавать спиоск ! <br>
+          md[[0,2,4],[1,3,5]] - из 0 колонки берет 1 элмент, из 2 колонки 3 элемент и т.д.<br>
+          md.reshape((10,5)) - делает из одномерного массива из 50 элементов, массив с 10 подмасивов, с 5 элементами в
+          каждом. Не создает новый массив, а трансформирует старый ! <br>
+          md.T - делает трансформацию (строки в столбци) <br>
+          </p>
+          <p>
+          <h4>Поэлементная работа</h4>
+          np.sqrt(md) - извлекает квадратный корень <br>
+          np.abs(md) - делает абсолюьные значения <br>
+          np.round(md) - округление <br>
+          np.ceil(md) - округление вверх <br>
+          np.floor(md) - округление вниз <br>
+          np.maximum(md1, md2) - возвращает новый массив, с максимальными элементами на каждом индексе <br>
+          np.add(nd1, md2) - складывает элементы (суммирует) <br>
+          np.subtract(nd1, md2) - вычитает элементы <br>
+          <br>
+          np.where(условие, да, нет) - к примеру np.where(md > 5, 100, md) <br>
+          np.where((md > 5) | (md = 2), 100, md) <br>
+          <br>
+          md.sum() , md.mean() - сумма всех элементов, среднее значение <br>
+          Параметр axis=1 or 0, отвечает за строку или столбец соответственно <br>
+          <img src="images/axis.png" style="height: 200px;" class="img-thumbnail img-fluid m-2">
+          <br>
+          md.any() - проверяет маску, есть ли хотя бы 1 True <br>
+          md.all() - проверяет маску, что все значения True <br>
+          md.sort() - сортирует, принимает пармаметр axis <br>
+          np.unique(md) - возвращает список уникальных значений <br>
+          np.in1d(md, ['андрей','вася']) - проверяет, есть ли эти данные в массиве (возвращает бул. маску) <br>
+          <br>
+          <h4>Рандом</h4>
+          np.random.randint(1,10,5) - мин. значение, макс значение, кол-во элементов <br>
+          np.random.pemutation(10) - делает ожномерный массив из 10 перемешенных элементов <br>
+          np.random.shuffle(md) - меняет все порядок эдементов. Не делает новый <br>
+          <br>
+          <h4>Сохранение</h4>
+          np.save('my_file', md) -название файла, и сам массив который нужно сохранить <br>
+          np.load('my_file.npy') - для чтения, не забываем указывать расширение <br>
+          np.savez('my_file', name1=md, name2=md1) - сохраняет несколько массивов <br>
+          md = np.load('my_file.npz') ---- md['name1'] - вытаскиваем по ключу <br>
+
+          </p>
+        </div>
+
+        <div>
+          <h1 class="text-center"> Pandas </h1>
+          <p>
+          <h6 class="text-info">Для началы работы нужно импортировать Numpy. Делается это при помощи команды import
+            pandas as pd</h6>
+          s1 = pd.Series(['какой-то массив']) - делает из массива серию с индексацией (0, 1, 2, 3 ....) <br>
+          s1.values - возвращает значения Серии <br>
+          s1.index - возвращает индексы Серии <br>
+          s1 = pd.Series(['какой-то массив'], index = ['a','b','c']) - создает Серию с нашими индаксами <br>
+          s1['c'] - вытаскиваем значение по индексу <br>
+          s1[['a','b']] - берет значения по индексу 'a' и 'b' <br>
+          Удобнее делать Серию из словаря, где ключи - индексы, значения - значения <br>
+          pd.isnull(s1) - проверка на пропуски. Возвращает True если значение пропущено (Nan) <br>
+          </p>
+          <p>
+          <h4>DataFrame</h4>
+          df = pd.DataFrame(s1) - создаем DataFrame <br>
+          Датафреймы очень хорошо создаются на основе словаря, который состоит из ключей и значений в качестве вложенных
+          списков.
+          Ключи словаря в датафрейме станут названиями столбцов, а вложенные списки - колонками.<br>
+          <br>
+          <img src="images/DF.png" style="height: 250px;" class="img-fluid m-2 img-thumbnail"> <br>
+          df2 = pd.DataFrame (data, columns-['visits', 'city']) - явно указываем, какие колонки (столбцы) нам нужны <br>
+          df2['city'] - даст серию колонки 'city' <br>
+          df2['total_time'] = df2['city'] * df2['visits'] - создаем новую колонку 'total_time' (если мы хотим вставить
+          значения из Серии,
+          нужно следить, что бы были одинаковые индексы) ^^ совет, так-же следим за типами индексов ^^ <br>
+          del df2['clicks'] - удаляет колонку с названием ... <br>
+          df2 = df2.rename(index={1: 'one'}) - заменить индекс 1 на 'one'. Можно так-же передать columns <br>
+          result = df2.shape - определяет количество строк и количество столбцов в датафрейме <br>
+          df.index , df.columns - дает информацию о индексах и колонках <br>
+          df = df.reindex(['city', 'visits'], axis=1) - получаем DF с данными колонками (если нужны по строка, то
+          axis=0). Если указать несуществующую колнку, то она будет заполнена NaN <br>
+          df.drop(‘’) удаляет по строке, и возвращает НОВУЮ копию (можно регулировать по axis - по умолчанию 0 ) <br>
+          <b class="text-danger">Параметр inplace=True, </b>т.е сделать прям на месте, не присваивать новой переменной !
+          <br>
+          <br>
+          <i>Срезы здесь работают как и в Numpy, только указываются индексы</i>
+          <br>
+
+          <!-- Что-то со скриншотом ?  -->
+          <p class="d-inline-flex gap-1 m-2">
+            <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+              aria-expanded="false" aria-controls="multiCollapseExample1">Посмотреть задачу на срез</a>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+              data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Её
+              решение</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+              aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Показать / скрыть
+              оба</button>
+          </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                  <img src="images/срезик.png" style="height: 400px;">
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <div class="card card-body">
+                  <b>result = df[['name','balance']]['e':'g']</b>
+                  <br>
+                  <br>
+                  Если нам к примеру, нужно вывести пользователей, которым больше 30 лет, то <br> result = df[df['age']
+                  > 30]
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4>Операторы loc, iloc, at, iat</h4>
+          df.loc['e'] - Оператор loc используется для вытягивания данных из датафрейма на основе лейблов (индекс
+          строки)!<br>
+          <i>Обязательно после loc указывать квадратные, а не круглые скобки!</i><br>
+          <i>В скобках: слева от запятой лейблы строк, справа от запятой лейблы столбцов.</i><br>
+          <br>
+          <s>Примеры взяты из задачи выше (по срезам) </s><br>
+          <br>
+          <strong>df.loc[['a','e'],['name','age']] </strong>- вытаскивает строки с индексами a,e по столбцам name, age
+          <br>
+          <b>То-же самое предстваление делается при помощи оператора iloc</b>, который работает с индексами ! т.е.
+          запись df.loc[['a','e'],['name','age']] = df.iloc[[0,4],[0,1]] <br>
+          df.at['b', 'name'] - может принимать только одну строку и один столбец в качестве входных аргументов. (разница
+          с loc в скорости) <br>
+          <br>
+          <h4>Сложение, сортировка, пропуски</h4>
+          df1.add(df2, fill_value=0) - сложение 2 датафреймов, если где стоит NaN, будет заменен на 0, для сложения. (к
+          примеру 200 + NaN = NaN, теперь же 200 + NaN = 200) <br>
+          <i>Функции ниже ничего не записывают в датафрейм. Они просто пытаются выполнить свою работу и если одно из
+            слагаемых NaN, тогда оно подменяется на значение из параметра fill_value.
+            Если и и там будет NaN, то тут уже не сработает.</i> <br>
+          df.sort_index(ascending=True) - новый DF, отсортированный по индексам от меньшего к большему (наоборот False),
+          принимает параметр axis <br>
+          df.sort_values(by='age') - по значениям в столбце age (за это отвечает параметр by). Если нужно выбрать
+          несколько столбцов by=['age', 'balance']<br>
+          <b>Параметр na_position='first'</b> (пропущенные значения идут 1)
+          <h4>Статистика</h4>
+          df.sum() , df.mean() - дает сумму и среднее значение всех значений DF по столбцам. Можно регулировать axis
+          <br>
+          <i>Парметр skipna=False - если есть пропуск Nan, выдаст NaN </i><br>
+          df.describe() - выводит статистику по каждой колонке <br>
+          df.value_counts() - функция возвращает серию, которая содержит количество для каждого элемента <br>
+          df['name'].unique() - серия из уникальных имен (т.е отдает список, где встречаются все имена по 1 разу) <br>
+
+          <div>
+            <h1 class='text-center'> Основы работы с Pandas </h1>
+            <p>
+            <h4>Работа с источниками данных</h4>
+            <h4>CSV - comma separated values</h4>
+            df = pr.read_csv('example.csv', <i>параметры</i> ) - читаем csv файл. Получаем DF (читаем как через
+            относительный путь, так и через абсолютный ("C:/example/:user_data.csv"))<br>
+            <b>Параметры</b>
+            <ul>
+              <li>sep=';', указываем, что в нашем csv файле разделителем является ;</li>
+              <li>header = None - указываем, что у нас нет названия колонок (параметр указывает функции read_csv не
+                вставлять первую строку из файла в заголовок датафрейма, а создать названия колонок автоматически)</li>
+              <li>names = ['name', 'balance', 'age'] - передаем названия колонок</li>
+              <li>index_col = 'name' - указываем, какая колонка должна стать индексом (можно указать несколько колонок
+                'мультииндекс') (index_col=0 - 0 колонка будет индексом)</li>
+              <li>skiprows = [0,4] - пропускает 0 и 4-ю строку (не читает их)</li>
+              <li>na_values = [-1] - будет считать значение -1 за пропуск ({age : -1} - для колонки age считать за
+                пропуск -1 )</li>
+              <li>nrows = 10 - прочитать первые 10 строк файла </li>
+              <li>chunksize = 2 - при помощи цикла for читать по 2 строки (chunk - кусок)</li>
+              <li>read_csv(..., encoding='windows-1251') - указываем кодировку</li>
+
+            </ul>
+            df.to_csv('failcsv.csv') - сохраняет файл в формате csv <br>
+            <b>Параметры</b>
+            <ul>
+              <li>sep=';' - указываем разделитель ;</li>
+              <li>na_rep = 'Null' - вместо пропусков поставит значение 'Null'</li>
+              <li>columns = ['name','age'] - перечисляем колонки, которые нам нужны</li>
+              <li>index = False - сохраняем без индексов</li>
+              <li>header = False - не сохраняет 1 строку с названием колонок</li>
+
+            </ul>
+            <h4>Json</h4>
+            df = pd.read_json('') - чтение файла <br>
+            df.to_json('') - сохранение файла <br>
+            <b>Параметры</b>
+            <ul>
+              <li>orient='records' - представляет каждую строку в отдельный словарь</li>
+            </ul>
+            Существует библиотека <b>requests</b>, которая получает URL запрос с JSON файлом, и преобразует его в DF
+            <br>
+            <i>Пример: <br> url = r'https://stepik.org/media/attachments/lesson/755302/data-399-2022-07-01.json' <br>
+              r = requests.get(url) <br>
+              data = r.json()
+            </i>
+            <h4>Дополнительно</h4>
+            _lst = pd.read_html('вставляем сслыку сайта или скачаную страничку') <br>
+            _lst[0] - берет 1 таблицу с сайта (ищет теги на странички сайта, и за нас создают таблицу) <br>
+            df.to_pickle('куда сохранять') - сохранение данных в формате pickle (сохраняет место) <br>
+            store = pd.HDFStore('путь.h5') - создаем базу данных с ключами <br>
+            store['users'] = df2 - сохраняем по ключу 'users' DF <br>
+            <h5>Exel</h5>
+            df = pd.read_excel('путь файла') <br>
+            <b>Параметры</b>
+            <ul>
+              <li>sheet_name = 'Лист2' - читаем 2 Лист</li>
+            </ul>
+            <i>with pd.ExcelWriter('FileName.xls') as ew: <br>
+              &nbsp;&nbsp;df1.to_excel(ew, sheet_name='S1') <br>
+              &nbsp;&nbsp;df2.to_excel(ew, sheet_name='S2') <br>
+              <b>сохранеям 2 Df на 2 страницах в 1 файле Exel</b>
+            </i>
+            </p>
+
+          </div>
+          <div>
+            <h1 class="text-center"> Чистка и подготовка данных к анализу </h1>
+            <h4>Пропуски</h4>
+            <p>
+              s[~s.isnull()] - получаем DF без пропусков <br>
+              s.dropna() - удаляет пропущенные значения из Серии <br>
+              df.dropna() - удаляет <b>полностью</b> строку, если есть хотя бы один NaN. <i>Принимает параметр axis (по
+                умолчанию = 0 - идет по строкам)</i><br>
+              df.dropna(how='all') - удаляет <b>полностью</b> строку, если <b>все </b>значения NaN. <i>Принимает
+                параметр axis </i><br>
+              <u>Параметр (thresh = 2) </u>- 'порог' указываем, что в строке должно быть как минимум 2 непустых
+              (непропущенных) значения <br>
+              <br>
+              <b>Параметр (subset=['A','C','D','G']) - будет выполнять работу только в этих колонках </b>
+              <br>
+            </p>
+            <h4>Дубликаты и избавление</h4>
+            <p>
+              df.fillna(0) - заполняет в DF пропуски 0. <u>Возвращает новый DF</u> <br>
+              df.fillna({1 : -1, 2 : 0}) - для колонки с названием 1 пропуски заполнить -1, а для колонки '2' заполнить
+              пропуски 0 <br>
+              df.fillna(method='fill - вперед идущие значения' or 'dfill - заполняет назад идущие значения') - заполняет
+              пропущенные значени предыдущим значеним по колонке <br>
+
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Пример
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body d-inline-flex p-2">
+                <img src="images/Prop.png" style="width: 150px;">
+              </div>
+            </div>
+            <br>
+            Параметр limit=1 - заполнит только по 1 пропущеному значению в каждой колонке <br>
+            <br>
+            df.duplicated() - дает маску со значениями true, false, встречалась ли эта строка раньше или нет <br>
+            df.drop_duplicates() - удаляет дубликаты ранее встреченой строки. Возвращает новый DF. <u>Чтобы удалить
+              дубликаты в конкретных столбцах, используйте subset</u><br>
+            Df.drop_duplicates(['name'], keep='last') - удаляет дубликаты строк, опираясь только на колонку 'name',
+            оставляет последние значения ! <br>
+
+            <pre>
+
+Параметр keep у функции drop_duplicates очень важен и вы часто будете его задавать! 
+Он определяет, какие дубликаты (если они есть) нужно сохранить. Вот значения, которые может принимать параметр keep:
+- first : удалить дубликаты, кроме первого вхождения.
+- last : удалить дубликаты, кроме последнего вхождения.
+- False : удалить все дубликаты.
+              </pre>
+
+            df['name'].map(handle) - передаем функцию, которая возвращает нам новое значение <br>
+            <br>
+
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                aria-expanded="false" aria-controls="collapseExample">
+                Пример
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample1">
+              <div class="card card-body d-inline-flex p-2">
+                <img src="images/map.png" style="width: 200px; height: 300px;">
+              </div>
+            </div>
+
+            </p>
+            <h4>Группы</h4>
+            <p>
+              df.replace([-9, -8], np.nan) - меняет значение -9 и -8 на Nan <br>
+              df.replace([-9,-8], [0,1]) <br>
+              df.replace({-9:0, -8:1}) <br>
+            </p>
+            <p>
+              bi = [-1,5,8,10] - явно задаем интервалы6 по которым хотим разбить значения <br>
+              names = ['Плохо','Так себе','Отлично'] - названия групп <br>
+              result = pd.cut(s1, bi, labels=names, right=False) - s1(хрантяся данные), и идет разбивка данных на группы
+              <br>
+              return pd.value_counts(result) - смотрим по значениям <br>
+            </p>
+            <h4>Выброс</h4>
+            <p>
+              mask = (df['test3'] > 1) | (df['test3'] < -1) - ставит True or False. <br>
+                df[mask] - выведет две строки, с выбросами <br>
+                mask.any() - идет по столбцу, если есть хотя бы один True, выдаст True <br>
+                mask.any(1) - идет по строке ... <br>
+                np.sign(df) - ставит 1 где значение больше 0 и наоборот <br>
+
+            </p>
+            <p>
+              mask = df['site_visits'] < 0 <br>
+                df[mask] = 0 - зануление значений, которые меньше 0 <br>
+            </p>
+            <h4>Матрицы фиктивных переменных</h4>
+            <p>
+              M = Pd.get_dummies(df[‘name’], prefex=‘имя’ - указывает перед название откуда взялось) - создает фиктивную
+              матрицу по столбцу name. <i>Выполняет преобразование категориальной переменной в фиктивные/индикаторные
+                переменные </i><br>
+
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExamp"
+                aria-expanded="false" aria-controls="collapseExample">
+                Пример
+              </button>
+            </p>
+            <div class="collapse" id="collapseExamp">
+              <div class="card card-body d-inline-flex p-2">
+                <img src="images/фиктивн пер.png" style="width: 500px;">
+                <br>
+                <img src="images/фиктивн пер 1.png" style="width: 500px;">
+              </div>
+            </div>
+            <br>
+            df.join(m) - склеивает обе матрицы ( по лейблам) <br>
+            <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.get_dummies.html#pandas.Series.str.get_dummies"
+              target="_blank"><b>очень полезная ссылка ! </b></a>
+            </p>
+            <h4>Работа со строками</h4>
+            <p>
+              df[‘name’].str.replace('','') - представляет как строку, и делает замену <br>
+              <br>
+              <img src="images/str.replace.png" alt="" style="height: 300px;" class="img-thumbnail img-fluid">
+              <br>
+              <i>Почему не использовать функцию map ? map выдаст ошибку если значение будет отсутствовать, при replace
+                Nan пропускается</i> <br>
+            <div class="alert alert-secondary" role="alert">
+              Есть множество полезных функций, связанных со строками, просьба просмотреть их самостоятельно
+            </div>
+            <div class="alert alert-secondary" role="alert">
+              Если берете первый символ через str[0] и дальше хотите применить функцию ,нужно второй раз прописывать :
+              ....str[0].str.isalpha()....
+            </div>
+            </p>
+          </div>
+
+          <div>
+            <h1 class='text-center'> Объединение данных и преобразование формы </h1>
+            <br>
+            <img src="images/muliind.png" alt="..." class="img-fluid img-thumbnail">
+
+            <p>
+              ds.unstack() - делает из мультииндекса стандартную индексацию ('разложить')
+            </p>
+
+            <img src="images/unstack.png" class="img-fluid img-thumbnail" alt="..." style="height: 300px;">
+
+            <p>
+              df.stack() - противоположная unstack()
+            </p>
+            df.swaplevel(0,1) - меняет уровни индексов местами <br>
+            df.sort_index(level=0) - сортировка по индексам 0 уровня <br>
+            df.reset_index() - преобразование в обычный DF <br>
+            <img src="images/reset_ind.png" class="img-fluid img-thumbnail" alt="..." style="height: 350px;">
+            <div class="alert alert-secondary" role="alert">
+              и в обратную сторону
+            </div>
+            <img src="images/set_ind.png" class="img-fluid img-thumbnail" alt="..." style="height: 350px;">
+            <p>
+              pd.merge(df1, df2) - соединение 2 DF в один <br>
+              <b>Параметры</b>
+            <ul>
+              <li>on='Должность' - явно указываем названием колонки, по которой произойдет объединение</li>
+              <li>how='left' or 'right' - вне зависимости, есть ли в правом DF значение, возьмет значение из левого</li>
+              <li>left_on='Должность', right_on='Должность2' - задаем название колонок, по которым нужно соединить</li>
+              <li>right_index=True - т.е из правого DF он возьмет колонку с индексами </li>
+              <li>how='outer' - берет значения из обоих DF. how='inner' - по умолчанию </li>
+            </ul>
+            <div class="alert alert-secondary" role="alert">
+              В Pandas есть функция join(), которая объединяет два датафрейма на основе их индексов или определенных
+              столбцов.
+              Функция join() работает аналогично функции merge(), но, в отличие от нее, по умолчанию объединяет два
+              датафрейма по индексам (если нет явно заданных столбцов для объединения),
+              в то время как функция merge() объединяет по определенным столбцам.
+            </div>
+            </p>
+            <p>
+              df= df1.join(df2) - объединение происходит автоматически по индексам. <i>По умолчанию how='outer' </i><br>
+              <i>Если есть одинаковые колонки, нужен параметр lsuffix = ‘l’, rsuffix=‘r’ </i><br>
+
+            <div class="alert alert-info" role="alert">
+              Если хотим объединить несколько DF, то df = df1.join([df2, df3])
+            </div>
+            <b>Вот все параметры функции join() в Pandas</b>
+            <ul>
+              <li>other: Обязательный параметр. Это DataFrame или объект, который нужно присоединить.</li>
+              <li>on: Столбцы в текущем DataFrame и объекте, которые будут использоваться для соединения. Это должны
+                быть
+                одинаковые столбцы в обоих объектах. Если параметр on не указан, Pandas попытается использовать все
+                общие
+                столбцы.</li>
+              <li>how: Тип объединения. Это может быть "left", "right", "outer" или "inner". По умолчанию how = 'left'.
+              </li>
+              <ul>
+                <li>"left": Используются все строки из левого DataFrame и только совпадающие строки из правого
+                  DataFrame.
+                </li>
+                <li>"right": Используются все строки из правого DataFrame и только совпадающие строки из левого
+                  DataFrame.
+                </li>
+                <li>"outer": Используются все строки из обоих DataFrame.</li>
+                <li>"inner": Используются только строки совпадающие в обоих DataFrame. </li>
+              </ul>
+              <li>lsuffix: Суффикс для добавления к именам столбцов в левом DataFrame, если они имеют одинаковые имена с
+                правым DataFrame.</li>
+              <li>rsuffix: Суффикс для добавления к именам столбцов в правом DataFrame, если они имеют одинаковые имена
+                с
+                левым DataFrame.</li>
+              <li>sort: Сортировка объединенного DataFrame по значениям столбцов. По умолчанию sort = False.</li>
+              <li>ignore_index: Если установлено значение True, новый DataFrame будет иметь индекс, который не зависит
+                от
+                исходных индексов из объединяемых DataFrame. По умолчанию ignore_index = False.</li>
+            </ul>
+            </p>
+            <p>
+              pd.concat([df1,df2], ignore_index = True) - приклеиваем DF снизу, делаем индекс общим <br>
+            <div class="alert alert-info" role="alert">
+              Параметр keys=['Руководитель', 'Специалист'] - указываем метки для DF <br>
+              <img src="images/keys.png" style="height: 300px;">
+            </div>
+            </p>
+            <p>
+              s1.combine_first(s2) - если в s1 значение пропущено, берет его из s2 <br>
+            <p class="d-inline-flex gap-1">
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#keykey" role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+                Пример
+              </a>
+            </p>
+            <div class="collapse" id="keykey">
+              <div class="card card-body d-inline-flex p-2">
+                <img src="images/comb.png" style="height: 400px; width: 200px;">
+              </div>
+            </div>
+            <p>
+              df.pivot() - преобразует из длинной 'таблицы' в 'широкую'
+            </p>
+            <img src="images/длинный.png" style="height: 450px;" class="img-fluid img-thumbnail">
+            <img src="images/широкий.png" style="width: 800px; margin-top: 10px; margin-bottom:10px ;"
+              class="img-fluid img-thumbnail">
+
+            <div class="alert alert-primary" role="alert">
+              pd.melt(df,'Год') - в обратную сторону
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="col-2">
+      <!-- 3 of 3 -->
+    </div>
+
+  </div>
+
+
+  <!-- Подвал -->
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Савин Илья Александрович</p>
+
+      <a href="/"
+        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+      </a>
+
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Домой</a></li>
+        <li class="nav-item"><a href="https://vk.com/osnovvvva" class="nav-link px-2 text-body-secondary">О авторе</a>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Практика</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Вопросы</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"></a></li>
+      </ul>
+    </footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

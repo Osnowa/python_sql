@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <script src="js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="sql_n_p.css">
+</head>
+
+<body>
+
+    <!-- скрипт для темы -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <!-- Тема  -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    aria-pressed="true">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- навигационная панель  -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">На главную</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="alert alert-danger" role="alert" style="margin-top: 10px;">
+            Всем привет, все так же предупреждаю, что и эту часть писал лично <b>Я !</b>, ошибки присутствуют )
+            Наслаждайтесь &hearts;
+        </div>
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://stepik.org/lesson/206798/step/1?unit=180500">Как обычно,
+                        держите ссылку на курс, откуда брались основные
+                        знания</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Воруем "!" </li>
+            </ol>
+        </nav>
+
+    </div>
+
+    <!-- основная часть  -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col col-xxl-2 col-xl-2 col-lg-2">
+                <h5>Быстрые ссылки</h5>
+            </div>
+
+
+            <div class="col-fluid col-xxl-8 col-xl-8 col-lg-8 col-md-10">
+                <h1>Основная часть</h1>
+                <div class="SQL">
+                    <p>
+                        <b>SQL</b> - это язык общения с базой данных <br>
+                        Результатом работы SQL запроса является <b>таблица</b><br>
+                    </p>
+                    <p>
+                        <span class="text-warning">select * from tables</span>- получить всю информацию из таблицы.<br>
+                        select name, price from products - получить только колонки name, price. <br>
+                        select * from products where price < 3000 - выбрали все данные, где цена товара меньше 3000.<br>
+                    </p>
+                    <p>
+                        select * from products where age >= 18 <i>and</i> price > 100 - несколько условий <br>
+                        select * from products where age >= 18 <i>or</i> price > 100 - несколько условий <br>
+                        select * from products where country in ('RU', 'US') - несколько условий <br>
+                        select * from products where price <i>BETWEEN</i> (между) 10 000 and 20000 - несколько условий
+                        <br>
+                    <div class="alert alert-primary" role="alert">
+                        select * from orders where status = 'cancelled' and sum between 3000 and 10000 - возьми все
+                        данные,
+                        где статус 'cancelled' а цена между 3000 и 10 000. <i>Можно use оператор NOT</i>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        Если у Вас в условии есть операторы OR, AND, то проверяйте порядок постановки условий. AND стоит
+                        выше. Что бы не
+                        было путаницы, раставляйте скобочки.<br>Select * from tables where (basic_lang='python' or
+                        basic_lang='php')
+                        and level='middle'
+                    </div>
+                    </p>
+                    <p>
+                        ... <span class="text-warning">ORDER BY</span> last_name, first_name - сортировка по фамилии, а затем по
+                        имени <br>
+                        ... ORDER BY last_name <span class="text-warning">DESC </span> - сортировка по фамилии в
+                        обратном порядке
+                        <br>
+                    </p>
+                    <p>
+                        ... LIMIT 5 - берем только первые 5 записей<br>
+                        ... LIMIT 5 OFFSET 5 - пропускается первая 5 самых дорогих товраов, а после берем 5первых
+                        товаров <br>
+                    <div class="alert alert-warning" role="alert">
+                        Порядок Важен !
+                        <ol class="list-group list-group-numbered" style="padding-top: 10px;">
+                            <li class="list-group-item">select * from products</li>
+                            <li class="list-group-item">where count > 0</li>
+                            <li class="list-group-item">order by price desc</li>
+                            <li class="list-group-item">limit 2 offset 4</li>
+                        </ol>
+                    </div>
+                    </p>
+                    <div class="card">
+                        <img src="images/ppbd.png" class="card-img-top" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Принцип работы базы данных</h5>
+                            <p class="card-text">Это обобщающий принцип.</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+
+
+                    <hr class="featurette-divider">
+
+
+                    <h2 class="text-center m-2">Добавление данных</h2>
+                    <p class="text-primary-emphasis">Дальнейшая работа будет проводиться в программе <i>Sequel Ace</i>
+                    </p>
+                    <p><span class="text-warning"> INSERT INTO </span> users (id, first_name) VALUES (6, 'Дмитрий') - вставить в таблицу users данные по
+                        названию столбцов</p>
+                    <p><b>Новые записи в таблицу можно добавить не только с помощью VALUES, но и с помощью SET. <br>
+                            Следующие два запроса идентичны: </b><br>
+                    <div class="bg-primary-subtle border border-primary-subtle rounded-3 p-1 m-2">INSERT INTO table
+                        (field1, field2) VALUES (value1, value2);</div>
+                    <div class="bg-primary-subtle border border-primary-subtle rounded-3 p-1 m-2">INSERT INTO table SET
+                        field1=value1, field2=value2;</div>
+                    </p>
+
+                    <p>Записи в таблицу можно добавлять не по одной, а сразу по несколько (в пакетном режиме).<br>
+                        Для этого нужно вставить несколько блоков значений, разделенных запятыми.<br>
+                        Следующий запрос добавит сразу три записи:<br>
+                    <div class="border border-primary-subtle rounded-3 p-1">INSERT INTO table (field1, field2) <br>
+                        VALUES <br>
+                        (value1_1, value1_2), <br>
+                        (value2_1, value2_2), <br>
+                        (value3_1, value3_2);
+                    </div>
+                    </p>
+
+                    <h4>Обновление данных</h4>
+                    <p><span class="text-warning"> UPDATE </span> products SET name = 'snikers' WHERE name = 'sinckers' - обновить данное NAME в таблице
+                        products когда NAME = 'sinckers'</p>
+
+                    <h4>Удаление данных</h4>
+                    <p><span class="text-warning"> DELETE FROM </span> users WHERE last_visit_date IS NULL - удаляем данные из users если last_visit_date =
+                        null
+                    </p>
+
+
+                    <hr class="featurette-divider">
+
+                    <h2 class="text-center">Создание таблиц</h2>
+                    <p><span class="text-warning">CREATE TABLE </span> users2 (id INR, first_name VARCHAR(20), last_name VARCHAR(50)) - создаем таблицу
+                        users2 c 3 колонками,
+                        с типами данных, (число и 2 типа строкового типа длиной до 20 и до 50 символов) </p>
+
+                    <div class="alert alert-warning" role="alert">Правило хорошего тона &darr;</div>
+                    <p>
+                    <div class="border border-primary-subtle rounded-3 p-1"> CREATE TABLE users 2 ( <br>
+                        &ensp; id INT, <br>
+                        &ensp; first_name VARCHAR(20), <br>
+                        &ensp; last_name VARCHAR(50), <br>
+                        &ensp; birthday DATE, <br>
+                        &ensp; age TINYINT, <br>
+                        &ensp; active BOOL <br>
+                        )
+                    </div>
+                    </p>
+
+                    <h4>Числовые поля</h4>
+                    <p>... id INT <span class="text-warning">UNSIGNED</span> - теперь будут только положительные
+                        числа<br>
+                        ... amount DECIMAL(10,2) - число будет иметь 10 знаков, 2 из которых отведены под дробную часть
+                    </p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Тип</th>
+                                <th scope="col">Объем памяти</th>
+                                <th scope="col">Диапазон</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>TINYINT</td>
+                                <td>1 байт</td>
+                                <td>от -128 до 127 (от -2<sup>7</sup> до 2<sup>7</sup>-1) <br>
+                                    от 0 до 255 (от 0 до 2<sup>8</sup>-1)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>SMALLINT</td>
+                                <td>2 байта</td>
+                                <td>от -32768 до 32767 (от -2<sup>15</sup> до 2<sup>15</sup>-1)<br>
+                                    от 0 до 65535 (от 0 до 2<sup>16</sup>-1)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>MEDIUMINT</td>
+                                <td>3 байта</td>
+                                <td>от -2<sup>23</sup> до 2<sup>23</sup>-1 <br>
+                                    от 0 до 2<sup>24</sup>-1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>INT <br>
+                                    INTEGER <br>
+                                    (синонимы)</td>
+                                <td>4 байта</td>
+                                <td>от -2<sup>31</sup> до 2<sup>31</sup>-1 <br>
+                                    от 0 до 2<sup>32</sup>-1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>BIGINT</td>
+                                <td>8 байта</td>
+                                <td>от -2<sup>63</sup> до 2<sup>63</sup>-1 <br>
+                                    от 0 до 2<sup>64</sup>-1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>DEC[(M,D)] <br>
+                                    DECIMAL[(M,D)] <br>
+                                    (синонимы) </td>
+                                <td></td>
+                                <td>Зависит от параметров M и D</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>FLOAT[(M, D)]</td>
+                                <td>4 байта</td>
+                                <td>Минимальное значение ±1.17·10-<sup>39</sup> <br>
+                                    Максимальное значение ±3.4·10<sup>38</sup></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <h4>Строковые поля</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Тип</th>
+                                <th scope="col">Диапазон Символов</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>TEXT</td>
+                                <td>Максимальная длина 65,535</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>TINYTEXT</td>
+                                <td>Максимальная длина 255</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>MEDIUMTEXT</td>
+                                <td>Максимальная длина 16,777,215</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>LONGTEXT</td>
+                                <td>Максимальная длина 4,294,967,295</td>
+                            </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>VARCHAR(X)</td>
+                                <td>Длина может быть любой в диапазоне от 0 до 65,535</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button class="btn btn-primary m-2" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Это Важно !</button>
+
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Почему в bio (биография, текст до
+                                65000 символов) используется TEXT, а не VARCHAR(65000)</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <p>
+                                Это популярный вопрос, который мы в уроках не освещаем. <br>
+                            <p>Итак, для хранения текста до 65000 знаков можно использовать и VARCHAR(65000), и TEXT,
+                                который может содержать строки до 65535 знаков. <br></p>
+                            <p>
+                                1. Для больших текстов (более 255-500 символов) принято использовать именно TEXT, а не
+                                VARCHAR. <br>
+                                2. VARCHAR обычно используют для небольших текстов (фамилии, имена, названия), заметок
+                                (мини комментарии) или каких-то параметров (статус, цвет и тд). <br>
+                            </p>
+                            <p>
+                                Это связано с особенностью хранения данных. VARCHAR-данные хранятся прямо в таблице и
+                                доступ к ним быстрее. Если нужно получить список товаров с их кратким описанием
+                                (например на странице сайта со списком товаров), то логично, чтобы доступ был быстрым.
+                                <br>
+                            </p>
+                            <p>Данные типа TEXT хранятся в отдельных файлах. Доступ к ним медленней, поэтому их
+                                используют для информации, которая нужна реже. Например, пользователи 90% ищут товары и
+                                10% смотрят их подробно (на отдельной странице). Как раз при подробном рассмотрении
+                                выводятся большие тексты и их можно хранить в TEXT.</p>
+                            <p><i>Получается, что 1000 и не туда и не сюда. Но так как есть четкое ограничение, то лучше
+                                    взять VARCHAR, так как для TEXT в принципе нельзя задать ограничитель. </i></p>
+
+                        </div>
+                    </div>
+
+                    <h4>Дата и время</h4>
+                    <p>... DATETIME - '2017-03-13 12:20:05' - пример заполнения типа datetime <br>
+                        ... DATETIME(3) - до милисекунд (6) - до микросекунд <br>
+                        ... TIME(3 or 6) - только для времени<br>
+                        ... DATE - только для даты</p>
+
+                    <h4>Null</h4>
+                    <p>... id INT UNSIGNED NOT NULL - т.е столбец ID не может принимать NULL (но может принимать '' -
+                        пустая строка, ведь это то-же значение),
+                        <span class="text-warning">обязательны для заполнения</span> <br>
+                        ... birthday varchar(10) NULL - может не примнимать данных
+                    </p>
+                    <p>
+                        <span class="text-warning">IFNULL(значение, альтернативное_значение); </span> <br>
+                        Функция IFNULL возвращает значение, переданное первым аргументом, если оно не равно NULL, иначе возвращает альтернативное_значение.
+                    </p>
+
+                    <h4>Bool, Enum, Set</h4>
+                    <p>... state ENUM ('new', 'confired') - тип данных с предопределенными значениями строкого типа <br>
+                        ... state SET('tv','wifi','bar') - может хранить несколько значений (через запятую) <br>
+                        where (FIND_IN_SET('RU', country) OR FIND_IN_SET('BY', country)) - для поиска в SET</p>
+
+                    <h4>Значения по умолчанию</h4>
+                    <p>DROP TABLE users - удалить таблицу users<br>
+                        name varchar(20) not null <span class="text-warning">DEFAULT '' </span> - если не вставлять
+                        значение никакое, то по умолчанию будет пустая строка<br>
+                        create_date DATETIME not null <span class="text-warning">DEFAULT CURRENT_TIMESTAMP </span>- по
+                        умолчанию дату и время текущего sql запроса</p>
+
+
+                    <hr class="featurette-divider">
+
+
+                    <h2 class="text-center">Индексы</h2>
+                    <h4>Уникальный ключ</h4>
+                    <p>create table products (id int not null <span class="text-warning">PRIMARY KEY</span> ) - столбик
+                        id является первичным ключом, т.е можно указывать только уникальные
+                        значения <br>
+                        create table products (id int not null <span class="text-warning">PRIMARY KEY AUTO_INCREMENT
+                        </span> ) - база данных будет самма увеличивать id на 1
+                    </p>
+                    <p>
+                        CREATE TABLE passports( <br>
+                        series VARCHAR(4) NOT NULL, <br>
+                        number VARCHAR(6) NOT NULL, <br>
+                        <span class="text-warning">PRIMARY KEY(series, number) </span> ); <br>
+                        - создаем первичный ключ по 2 полям !
+                    </p>
+                    <h4>Уникальный индекс</h4>
+                    <p>
+                        ... passport varchar(20) not null, <br><span class="text-warning">UNIQUE KEY
+                            passport(passport)</span> - теперь в этой
+                        колонке можно вставлять только уникальные значения (не дублировались)
+                    </p>
+                    <p>
+                        ... series varchar(5) not null, <br> number varchar (6) not null, <br> <span
+                            class="text-warning">UNIQUE passport (series, number) </span> -
+                        проверяет уникальность сразу же по двум полям ВМЕСТЕ (составной по 2 полям)
+                    </p>
+                    <h4>Обычные индексы</h4>
+                    <p>
+                        CREATE INDEX marks_index ON cars(mark) - создаем индекс с именем marks_index по колонке mark в
+                        таблице cars
+                    </p>
+                    <div class="bg-primary-subtle border border-primary-subtle rounded-3 p-2 m-2">
+                        разница только в точке приложения: INDEX marks_index(mark) используется при создании таблицы, а
+                        CREATE INDEX marks_index ON cars(mark)
+                        при добавлении индекса в существующую таблицу. А так разницы нет. <i>KEY == INDEX</i>
+                    </div>
+                    <h4>Добавление и удаление индексов</h4>
+                    <p>CREATE UNIQUE INDEX email on users(email) - создаем уникальный индекс для колонки email <br>
+                        DROP INDEX email ON users - удаляем индекс с названием email в таблице users
+                    </p>
+                    <img src="images/index_sql.png" class="img-fluid m-2 img-thumbnail" alt="...">
+
+
+                    <hr class="featurette-divider">
+
+                    <h2 class="text-center">Изменение таблиц</h2>
+                    <h4>Добавление и удаление столбцов</h4>
+                    <p>
+                        <span class="text-warning">ALTER TABLE users ADD COLUMN birthday </span>date null default null - Добавление 
+                        столбца birthday с праметрами ... (default лучше поставить !) <br>
+                        <span class="text-warning">ALTER TABLE users DROP COLUMN birthday </span> - изменяем таблицу users удаляя столбец birthday <br>
+                        <i>Если несколько запросов, то в скобочках, через запятую</i>
+                    </p>
+                    <div class="bg-primary-subtle border border-primary-subtle rounded-3 p-2 m-2"> 
+                        Пример <br>
+                        ALTER TABLE films ADD COLUMN rating FLOAT NOT NULL DEFAULT 0; <br>
+                        UPDATE films SET rating = (kinopoisk + imdb) / 2;
+                    </div>
+                    <h4>Изменение столбцов</h4>
+                    <p>
+                        ALTER TABLE users <span class="text-warning"> MODIFY </span> first_name VARCHAR (50) - изменение типа столбца 
+                        (нужно указывать полное описание столбца ! ) <br>
+                        ALTER TABLE users <span class="text-warning"> CHANGE </span> nname name VARCHAR (50) - пишем 2 имени, имя текущего столбца
+                        и новое имя для этого столбца, а в конце указываем структуру
+                    </p>
+                    <h4>Изменение таблицы</h4>
+                    <p>RENAME TABLE product TO products - переименовали таблицу <br>
+                        RENAME TABLE product TO products, log to logs - переименовали 2 таблицы
+                    </p>
+
+
+
+                    <hr class="featurette-divider">
+
+
+                    <h2 class="text-center">Поиск текста</h2>
+                    <h4>С помощью Like</h4>
+                    <p>
+                        select * from users where first_name <span class="text-warning">LIKE</span> 'Наталья' - обычное = <br>
+                        select * from users where first_name <span class="text-warning">LIKE BINARY</span> 'Наталья' - поиск с учетом регистра <br>
+                        select * from users where first_name <span class="text-warning">LIKE </span> 'Н<span class="text-warning">%</span>'- поиск где перва буква Н и набор симоволв<br>
+                        select * from users where first_name <span class="text-warning">LIKE </span> 'Н<span class="text-warning">_</span>'- поиск где перва буква Н и ровно 1 символ ! ( _ один символ)<br>
+                        <i> Обратный слеш так-же работает. % И _ можно ставить как для начала, так и для коцна искомого слова </i>
+                    </p>
+                    <h4>Полнотекстовый поиск</h4>
+                    <p>
+                        CREATE <span class="text-warning"> FULLTEXT INDEX </span> idx_name on products(name) - создаем полнотекстовый индекс с 
+                        именем idx_name для колонки name в таблице products (собрали словарь по колонке, с указанием, в каких местах эти слова встречаются) <br>
+                        <img src="images/fulltext ind.png" class="img-fluid m-2" alt="...">
+                    </p>
+                    <p>
+                        <i>... price INTEGER UNSIGNED NOT NULL DEFAULT 0, <br>
+                            FULLTEXT INDEX name(name); - пример при создании таблицыу</i>
+                    </p>
+
+                    <p>
+                        SELECT * from products WHERE <span class="text-warning">MATCH(name) AGAINST</span> ('микроволновая печь') - name (стобцы
+                        по которым будем искать, и слова, которые нужно найти в поле name), (ищет не фразу, а слова по отдельности, и сортирует)
+                    </p>
+                    <div class="bg-primary-subtle border border-primary-subtle rounded-3 p-2 m-2"> 
+                        Делаем сортировку по ревелантности данных, т.е пользователь увидит сначала то что более подходит под поиск  
+                    </div>
+                    <p>
+                        SELECT * from products WHERE <span class="text-warning">MATCH(name) AGAINST</span> ('микроволновая печь' <span class="text-warning"> IN BOOLEAN MODE </span>) - вкл. 
+                        операторов для лучшего поиска.  <br>
+                        ... '<span class="text-warning">+</span>микроволновая печь' - т.е слово микроволновая должна быть обязательно <br>
+                        ... '<span class="text-warning">-</span>микроволновая печь' - т.е слово микроволновая не должно быть <br>
+                        ... '<span class="text-warning">~</span>микроволновая печь' - понижаем ревелантность слова <br>
+                    </p>
+                    <p>CREATE FULLTEXT INDEX search ON products(name, description); - создание по нескольким столбцам (<i> Так как индекс создается по нескольким столбцам,
+                        то при поиске в конструкции MATCH надо перечислить их все </i>)
+                    </p>
+                    <img src="images/com1.png" class="img-fluid m-2 img-thumbnail" alt="...">
+                    <div class="alert alert-warning" role="alert">
+                        И хотя полнотекстовый поиск в MySQL не является морфологическим (не учитывает склонения), мы всё же можем обработать и такие ситуации.<br>
+                        В логическом режиме в конце слов вместо окончаний можно добавлять звездочку, тогда поиск будет учитывать все варианты написания.<br>
+                        <br>
+                        Несколько примеров:<br>
+                        «товар*» будет равносилен словам «товар», «товары», «товарами» и тд. <br>
+                        «игр*» будет равносилен словам «игра», «игры», «игрой» и тд.
+                    </div>
+                    <img src="images/com2.png" class="img-fluid m-2 img-thumbnail" alt="...">
+                    <div class="alert alert-warning" role="alert">
+                        Как вы знаете, полнотекстовый поиск ищет слова по отдельности. <br>
+                        Но иногда нужно найти фразу целиком, например если это название книги или вы точно знаете что ищете. <br>
+                        Для это достаточно заключить фразу в двойные кавычки: <br>
+                        <br>
+                        SELECT * FROM films <br>
+                        WHERE MATCH(name) AGAINST ('"Кремниевая долина"' IN BOOLEAN MODE);
+                    </div>
+
+
+                    <hr class="featurette-divider">
+
+                    <h2 class="text-center">Вспомогательные функции</h2>
+                    <h4>Математические функции</h4>
+                    <p>
+                        <span class="text-warning">ROUND</span> (rating) - округление (в скобках можно указать цифру, сколько цифр после запятой нужно оставить) <br>
+                        ROUND (rating) <span class="text-warning">as </span> rating - позволяет переименовать поле при выводе (конструкция as)
+                        .<b>Если после as дать другое название, то получится новая колонка</b><br>
+                        <span class="text-info">Пример: select id,comments, ceiling((comments / 10)) as pages from posts</span> - создает при Выводе новую колонку pages <br>
+                        <span class="text-warning">TRUNCATE</span> (rating) - усекает чсило (в скобках можно указать цифру, сколько цифр после запятой) <br>
+                        <span class="text-warning">FLOOR</span> (rating) - возвращает нижнее целое значение <br>
+                        <span class="text-warning">CEILING</span> (rating) - возвращает верхнее целое значение <br>
+                    </p>
+                    <p><i>При выводе данных !!! Для Обновления нужна конструкция UPDATE</i></p>
+                    <h4>Cтроковые функции</h4>
+                    <p>
+                        SELECT id, first_name, <span class="text-warning">LENGTH</span>(first_name) from users - возвращает длину строки в байтах (1 символ = 2 байта) <br>
+                        SELECT id, first_name, <span class="text-warning">CHAR_LENGTH</span>(first_name) from users - возвращает реальную длину строки <br>
+                        SELECT id, first_name, <span class="text-warning">CONCAT (last_name,' ', LEFT(first_name, 1), '.')</span> as fi from users - 
+                        склеиваем строки, LEFT - берем 1-ый символ со строки first_name <br>
+                        <img src="images/concat_ws.png" class="img-fluid m-2 img-thumbnail" alt="...">
+                        <span class="text-warning"> UPPER</span> () - в верхний регистр <br>
+                        <span class="text-warning"> TRIM</span> () - убирает пробелы справа и слева <br>
+                        <span class="text-warning">LPAD(series, 4, '0') </span>  и  <span class="text-warning">RPAD(number, 6, '0') </span>- заполняет слева нулями до длины 4 (и справа до длины 6 соответственно)
+                        <div class="text-info"> Остальные функции можно посмотреть самостоятельно в интернете &#10084;</div>
+                    </p>
+                    <h4>Функции даты</h4>
+                    <p>
+                        SELECT *, <span class="text-warning">YEAR</span>(birthday) as year FROM users - извлекает год из переданой даты <br>
+                        SELECT *, <span class="text-warning">MONTH</span>(birthday) as month FROM users - извлекает месяц из переданой даты <br>
+                        SELECT *, <span class="text-warning">DAY</span>(birthday) as day FROM users - извлекает день из переданой даты <br>
+                        MONTH(<span class="text-warning">NOW()</span>) - возвращает сегоднешний месяц<br>
+                        SELECT * FROM users WHERE date_joined > NOW() - <span class="text-warning">INTERVAL 7 DAY</span> - указываем, что дата регистрации 
+                        должна быть больше чем текущее время - 7 дней <br>
+                        <span class="text-info"><b>INTERVAL </b>позволяет прибавлять или уменьшат дату</span> <br>
+                        SELECT * , <span class="text-warning">DATE_FORMAT</span> (date_joined, '%d.%m.%Y %H:%i') - форматируем дату в удобный для нас формат <br>
+                        <div class="border border-primary border-2 p-2 m-1"> <span class="text-danger">Пример :</span> select * from visits where time(date) >= '12:00:00'
+                            and time(date) <= '12:59:59' and date(date) = '2017-06-22' order by date desc - <br>получаем все даты для 22 июня с 12 до 12/59 <br>
+                            <span class="text-danger">Пример 2 :</span> update calendar set visit_date = visit_date + interval 90 minute where date(visit_date) = '2017-05-14' and time(visit_date) >= '13:00:00' - 
+                            <br>перенесли на 1,5 часа вперед все записи после 13 часов дня (включительно) за 14 мая 2017 года.
+                        </div>
+                        <span class="text-warning">dayofweek(birthday)</span> - выводит день недели в виде цифры
+                    </p>
+                    <h4>Сортировка по дате</h4>
+                    <p>
+                        SELECT id, DATE_FORMAT(date, '%d.%m.%Y') as date FROM transactions ORDER BY <span class="text-warning">transactions.</span>date - 
+                        сообщаем sql, что сортировать по date из исходной таблицы. <br><b>
+                            Потому что DATE_FORMAT отдает нам строку !!! А не дату </b>
+                    </p>
+
+
+                    <hr class="featurette-divider">
+                    
+                    <h2 class="text-center">Группировка данных</h2>
+                    <h4>Count, Min, Max, AVG</h4>
+                    <p>
+                        SELECT<span class="text-warning"> MIN</span>(price),<span class="text-warning">MAX</span>(price),<span class="text-warning">AVG</span>(price),
+                        <span class="text-warning">COUNT</span>(*) from products - получаем мин, макс, среднее значени по колонке price и кол-во найденных записей<br>
+                        COUNT(<span class="text-warning">stock</span>) - не считае null <br>
+                        <a href="https://dev.mysql.com/doc/refman/5.7/en/aggregate-functions.html" rel="noopener noreferrer nofollow" target="_blank">Функции агрегации</a> <br>
+                        <a href="https://function-x.ru/sql_sum_min_max_avg_count.html" rel="noopener noreferrer nofollow" target="_blank">Функции агрегации (рус)</a> <br>
+                    </p>
+
+
+                    <h4>GROUP BY</h4>
+                    <p>
+                       SELECT category_id FROM products <span class="text-warning">GROUP BY</span> category id - получаем все категории, содержащиеся в таблице <br>
+                       <div class="text-info border border-2 p-2">Группировать можно по нескольким колнкам, через запятую <br>
+                        Важно, что бы группируемые колонки были в select запросе <br>
+                        В select запрос можно вставить функции агрегации <br>
+                        <span class="text-warning">SELECT sex, COUNT(sex) as members FROM users GROUP BY sex </span> - группируем по полу, и получаем кол-во мужчин и женщин 
+                        </div>
+                    </p>
+                    <img src="images/group_by.png" class="img-fluid mt-2 mb-2 img-thumbnail" alt="...">
+
+
+                    <h4>HAVING и WHERE</h4>
+                    <p>
+                        Иногда нам нужно подсчитать данные уже после группировки, тогда на помощь приходит конструкция <span class="text-warning">HAVING</span> <br>
+                        SELECT category_id, COUNT(*) as cnt FROM products WHERE count > 0 GROUP BY category_id <span class="text-warning"> HAVING </span>cnt > 2; <br>
+                        <img src="images/having.png" class="img-fluid m-2 img-thumbnail" alt="...">
+                    </p>
+
+                    <p>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          Важно 
+                        </button>
+                    </p>
+                    <div class="collapse mb-2" id="collapseExample">
+                        <div class="card card-body">
+                            <span class="text-danger">WHERE</span> <br>
+                            Команда WHERE используется для фильтрации записей из таблицы или при объединении более одной таблицы.
+                            Она извлекает только те записи, которые удовлетворяют указанному условию в команде WHERE. 
+                            WHERE может использоваться с операторами SELECT, UPDATE и DELETE <br>
+                            <span class="text-danger pt-2">HAVING</span> <br>
+                            Команда HAVING, с другой стороны, используется для фильтрации записей из групп, основанных на заданном условии
+                            в команде HAVING. Те группы, которые удовлетворяют заданному условию, появятся в окончательном результате.
+                            HAVING может использоваться только с оператором SELECT и обычно используется совместно с GROUP BY для
+                            фильтрации группированных данных.
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                            <div class="card-header">
+                                Основные различия 
+                            </div>
+                            <ul class="list-group list-group-flush">
+                              <li class="list-group-item">WHERE используется до операции агрегации, а HAVING - после.</li>
+                              <li class="list-group-item">WHERE используется для фильтрации строк, а HAVING - для фильтрации агрегированных данных.</li>
+                              <li class="list-group-item">WHERE не может использовать псевдонимы столбцов или агрегатные функции, в то время как HAVING может.</li>
+                              <li class="list-group-item">WHERE применяется перед группировкой, а HAVING - после группировки. Это означает, что WHERE фильтрует данные до операции GROUP BY, а HAVING фильтрует результаты после операции GROUP BY.</li>
+                              <li class="list-group-item">WHERE применяется к каждой отдельной строке, а HAVING к группам строк.</li>
+                              <li class="list-group-item">Оба оператора могут использоваться вместе в одном запросе. В таком случае WHERE применяется первым, затем результаты группируются с помощью GROUP BY, и, наконец, группы фильтруются по условиям HAVING.</li>
+                            </ul>
+                    </div>
+
+                    <hr class="featurette-divider">
+
+                    <h2 class="text-center">Многотабличные запросы</h2>
+                    <h4>Объединение с помощью UNION</h4>
+                    <p>
+                        SELECT * FROM logs_2016 <span class="text-warning">UNION</span> SELECT * FROM logs_2017 <span class="text-warning">UNION</span>
+                        SELECT * FROM logs_2018 - получаем общую таблицу данных за 3 года <br>
+                        <span class="text-info">Должно быть одинаковое кол-во колонок в таблицах + одинаковый тип данных <br>
+                        Название колонок берется из 1-ой таблицы <br>
+                        Поддерживается WHERE r каждому select запросу</span>
+
+                    </p>
+                    <div class="border border-primary border-2 p-2 m-2"> <span class="text-danger">Пример :</span>
+                        <img src="images/pr2.png" class="img-fluid mt-2 img-thumbnail" alt="...">
+                        select date_format(date,'%d.%m.%y') as date,amount, 'bank' as  payment_type from bank_transactions
+                        where client_id = 56 <br>union <br>select date_format(date,'%d.%m.%y') as date,amount,'cash' 
+                        as  payment_type from cashbox_transactions where client_id =  56
+                    </div>
+
+                    <h4>Объединение с помощью UNION: сортировка</h4>
+                    <p>
+                        <span class="text-warning">Нужно при объединение заключить оба SELECT запроса в скобки. Если хотим сортировать до объединения, сортируем внутри скобок 
+                        , используя LIMIT. Если нужна сортировка общей таблицы, то прописываем после скобок </span> <br>
+                        (select ...) UNION (select ...) ORDER BY ...
+                    </p>
+
+                    <h4>Объединение с помощью UNION: группировка</h4>
+                    <p>
+                        select * from<i>(select .. from ... union select ... from ...)</i> new_name - получаем обычный select запрос (промежуточную таблицу new_name),
+                        который можно группировать
+                    </p>
+
+                    <h4>Отношение один к одному</h4>
+                    <p>
+                        (отношение между таблицами), т.е данные для одного и того-же объекта хранятся в разных таблицах <br>
+                        <br>
+                        SELECT * from users, users_data WHERE user.id = users_data.id - берем все данные из 2-х таблиц по пользователям. При помощи WHERE указываем, 
+                        как эти таблицы связаны (первичные ключи ?, по каким колонкам можно определить, что это относится к одному и тому-же пользователю) <br>
+                        <b>Запросы из разных таблиц нужно указывать через точку (users.name)</b>
+                    </p>
+                    <p>
+                        Вообще сортировать можно по любой из 2-ух таблиц(where,order и т.д.), главное указать, какой колонкой они связаны (1 к 1)
+                    </p>
+                    <p>
+                        UPDATE users as u, users_data as ud SET u.last_name = 'Abramova', ud.bio = 'What fuck ?' WHERE u.id = 3 and u.id = ud.id - 
+                        обновление данных. Главное указать, для какого id пользователя делаются изменения
+                    </p>
+                    <img src="images/delete_using.png" class="img-fluid mt-2 mb-2 img-thumbnail" alt="...">
+
+                    <h4>Внешний ключ</h4>
+                    <p>
+                        CREATE TABLE users_date <br>
+                        (id int UNSIGNED not null PRIMARY KEY AUTO_INCREMENT, <br>
+                        <span class="text-warning"> FOREIGN KEY (id) REFERENCES users(id) </span><i> - указываем колонку (id) которую будем связывать (связываем с колокной id из табл. users) </i><br>
+                        <span class="text-warning">ON DELETE CASCADE </span> - <i>удаление в основной таблице повлечет за собой удаление в ссылающийся</i><br>
+                        <span class="text-warning">ON UPDATE CASCADE  </span> - <i>обновление id (ключа) в основной таблице повлияет на изменение в этой таблице </i>
+
+                    </p>
+                    <p>
+                        Сперва нужно записывать данные в таблицу users. <br>
+                        Удаление данных из users_date не влечет за собой удаление из основной таблицы (users) - т.е. связь одностороняя.<br>
+                        При добавлении данных может произойти сбой в нумерации id, тогда поможет функция <span class="text-warning">LAST_INSERT_ID()</span>
+                        <div class="border border-primary border-2 p-2 m-2"> <span class="text-danger">Пример :</span> <br>
+                            INSERT INTO users_data (id, bio) <br>
+                            VALUES (LAST_INSERT_ID(), 'Биография Илюхи') <br>
+                            - Явно указываем колонку id, хоть она и задана как автоматическая (либо можем явно указать номер id &#9731;)
+                        </div>
+                    </p>
+
+                    <h4>Отношения один-ко-многим</h4>
+                    <p>
+                        Основное отличие - на 1 запись в одной таблице может приходиться несколько записей в другой. <br>
+                        Так-же нужно указывать и несколько условий WHERE (связей), если таблиц несколько <br>
+                        <span class="text-info"> SELECT orders.* (получаем все данные из таблицы orders) </span> <br>
+                        <span class="text-danger">Главное указать связь ! </span>
+                    </p>
+
+                    <h4>Создание связей один-ко-многим</h4>
+                    <p>
+                        Значение связанных полей (id например) нужно указывать напрямую <br>
+                        При создании связи можно указать <span class="text-warning">ON DELETE SET NULL</span> - при удалени запись не удалиться, а проставиться NULL <br>
+                    </p>
+                    <div class="border border-primary border-2 p-2 m-2"> <span class="text-danger">Пример :</span> <br>
+                        ALTER TABLE artists ADD COLUMN genre_id INT UNSIGNED NULL; <br>
+                        ALTER TABLE artists ADD FOREIGN KEY (genre_id) REFERENCES genres (id) ON DELETE SET NULL <br> 
+                        - Создаем в таблице artists новое поле genre_id и сделайте его внешним ключом на поле id в таблице genres. <br>
+                        <br>
+                        <p>
+                            ALTER TABLE products <br> 
+                            ADD FOREIGN KEY (category_id) REFERENCES categories (id) <br>
+                            - Добавление связи в существующую таблицу
+                        </p>
+                    </div>
+
+                    <h4>JOIN</h4>
+                    <p>
+                        Удобнее и читабельнее использавать конструкцию JOIN для обозначения связей между таблицами <br>
+                        SELECT * FROM posts as p <span class="text-warning">JOIN</span> users as u <span class="text-warning">ON</span> 
+                        u.id = p.user_id  - а уже затем можно прописывать условия, таким образом чтение становится более удобным<br>
+                    </p>
+                    <p>
+                        JOIN users as u ON u.id = c.user_id <br>
+                        JOIN posts as p ON p.id = c.post_id <br>
+                        - указываем несколько связей 
+                    </p>
+                    <div class="border border-primary border-2 p-2 m-2"> <span class="text-danger">Пример :</span> <br>
+                        SELECT <br>
+                        &nbsp; p.id, <br>
+                        &nbsp;   p.name, <br>
+                        &nbsp; p.price,<br>
+                        &nbsp; cats.name as category<br>
+                        FROM <br>
+                        &nbsp; products as p <br>
+                            JOIN <br>
+                            &nbsp;  categories as cats ON  p.category_id = cats.id<br>
+                        WHERE<br>
+                        &nbsp; cats.parent_id IS NULL<br>
+                    </div>
+
+
+
+                    <h4>Понимание JOIN</h4>
+
+                    <ol>
+                        <li>JOIN – левая_таблица JOIN правая_таблица ON условия_соединения</li>
+                        <li>LEFT JOIN – левая_таблица LEFT JOIN правая_таблица ON условия_соединения</li>
+                        <li>RIGHT JOIN – левая_таблица RIGHT JOIN правая_таблица ON условия_соединения</li>
+                        <li>FULL JOIN – левая_таблица FULL JOIN правая_таблица ON условия_соединения</li>
+                        <li>CROSS JOIN – левая_таблица CROSS JOIN правая_таблица</li>
+                    </ol>
+
+
+                    <p>
+                    <b>Краткий синтаксис (Полный синтаксис) - Описание</b>
+                    </p>
+
+                    <ol>
+                        <li><span class="text-warning"> JOIN (INNER JOIN) </span><br>
+                            Из строк левой_таблицы и правой_таблицы объединяются и возвращаются только те строки, по которым выполняются условия_соединения.
+                        </li>
+                        <li><span class="text-warning"> LEFT JOIN - (LEFT OUTER JOIN) </span><br>
+                            Возвращаются все строки левой_таблицы (ключевое слово LEFT). Данными правой_таблицы дополняются только те строки левой_таблицы, для которых выполняются условия_соединения. Для недостающих данных вместо строк правой_таблицы вставляются NULL-значения.
+                        </li>
+                        <li><span class="text-warning"> RIGHT JOIN (RIGHT OUTER JOIN) </span><br>
+                            Возвращаются все строки правой_таблицы (ключевое слово RIGHT). Данными левой_таблицы дополняются только те строки правой_таблицы, для которых выполняются условия_соединения. Для недостающих данных вместо строк левой_таблицы вставляются NULL-значения.
+                        </li>
+                        <li><span class="text-warning"> FULL JOIN (FULL OUTER JOIN) </span><br>
+                            Возвращаются все строки левой_таблицы и правой_таблицы. Если для строк левой_таблицы и правой_таблицы выполняются условия_соединения, то они объединяются в одну строку. Для строк, для которых не выполняются условия_соединения, NULL-значения вставляются на место левой_таблицы, либо на место правой_таблицы, в зависимости от того данных какой таблицы в строке не имеется.
+                        </li>
+                        <li><span class="text-warning"> CROSS JOIN </span><br>
+                            Объединение каждой строки левой_таблицы со всеми строками правой_таблицы. Этот вид соединения иногда называют декартовым произведением.
+                        </li>
+                    </ol>
+
+
+
+                    <h4>Выборка из трех и более таблиц</h4>
+                    <p>
+                        <i>Если у нас в запросе несколько JOIN, то каждый последующий JOIN присоединяется к самой первой таблице, которая была указана в блоке FROM?</i> 
+                    </p>
+                    <p>
+                        <b>Следующую таблицу можно подцепить к любой таблице, которая была объявлена выше. Это делается в блоке ON</b> <br>
+                        SELECT * <br>
+                        FROM base
+                        JOIN second ON second.filed_id = base.id  -- <i>вторая таблица цепляется к основной</i> <br>
+                        JOIN third ON third.field_id = second.id  -- <i>третья таблица цеплятеся ко второй </i><br>
+                        JOIN forth ON forth.field_id = base.id    -- <i>четвертая таблица цеплятеся к первой </i><br>
+                    </p>
+
+
+
+                    <h4>Ссылочная целостность</h4>
+                    <p>
+                        ALTER TABLE comments DROP FOREIGN KEY comments_ibfk_2 - удаляем внешний ключ (связь) <br>
+                        ALTER TABLE comments ADD FOREIGN KEY (post_id) REFERENCES posts(id) <span class="text-warning"> ON DELETE RESTRICT </span>- добавляем связь, не даем удалить записи, на которые есть сслыки
+                    </p>
+                    <p>
+                        Если мы действительно хотим удалить пост, то нужно сначала удалить все коментраии, которые на него ссылаются
+                    </p>
+                    <p>
+                        <i> в случае с RESTRICT сперва нужно удалить дочерние данные (которые ссылаются на что-то), а уже потом основные (те, на которые ссылаются)</i>
+                    </p>
+
+
+
+                    <h4>Отношение многие ко многим</h4>
+                    <p>
+                        Для отношения многие ко многим СОЗДАЕТСЯ дополнительная таблица, в которой хранятся внешние ключи к 2 таблицам (или больше)
+                    </p>
+                    
+                    <a href="https://habr.com/ru/articles/488054/" rel="noopener noreferrer nofollow" target="_blank">Очень полезная статья по связям</a>
+                    <img src="images/pr3.png" class="img-fluid mt-2 mb-2 img-thumbnail" alt="...">
+                    <img src="images/pr3_1.png" class="img-fluid mt-2 mb-2 img-thumbnail" alt="...">
+
+
+
+
+
+                    <hr class="featurette-divider">
+                    <h2>Вложенные Запросы</h2>
+                    <p>
+                        Подзапрос SQL - это запрос, который включается в другой запрос. Подзапросы позволяют использовать результат выполнения внутреннего запроса во внешнем запросе, что позволяет строить сложные запросы из более простых. <br>
+                        Читаются изнутри наружу
+                    </p>
+                    <p>
+                        <i> Пример подзапроса, который выводит все продукты, цена которых выше средней по всем продуктам: </i>
+                    </p>
+                    <p>
+                        <spna class="text-warning"> SELECT * </spna> <br>
+                        FROM Products <br>
+                        WHERE Price > (<spna class="text-warning"> SELECT </spna> AVG(Price) FROM Products); <br>
+                    </p>
+                    <p>
+                       <i> Пример подзапроса, который выводит все продукты, которые есть в таблице с чеками: (таблицы свзаны) </i>
+                    </p>
+                    <p>
+                        <spna class="text-warning"> SELECT </spna> *  <br>
+                        FROM Products <br>
+                        WHERE Product_id IN <br>
+                        (<spna class="text-warning"> SELECT</spna> Product_id FROM Sales);
+                    </p>
+                    <p>
+                        <b>Нужно следить за условиями вложенных запросов, они не вытягиваются друг за другом !!!</b>
+                    </p>
+                    <p>
+                        <i>Получите из таблицы products джинсы, стоимость которых больше средней цены за джинсы.
+                            Выведите id, название и цену.
+                            Данные отсортируйте по цене, а затем по id.</i>
+                    </p>
+                    <p>
+                        <spna class="text-warning"> SELECT </spna> id, name, price FROM products WHERE name LIKE 'Джинсы%' and price > ( <br>
+                        <spna class="text-warning"> SELECT </spna> avg(price) FROM products WHERE name like 'Джинсы%') <br>
+                        ORDER BY  price, id
+                    </p>
+
+
+
+                    <h4>IN, ANY, ALL</h4>
+                    <p>
+                        SELECT <span class="text-warning">DISTINCT</span> ... - говорим базе, что нужно извлекать только уникальные значения 
+                    </p>
+                    <p>
+                        <ul>
+                       <li> Операторы ANY и ALL используются с предложением WHERE или HAVING.  </li>
+                       <li> Оператор ANY возвращает true, если какое-либо из значений подзапроса удовлетворяет условию. </li>
+                       <li> Оператор ALL возвращает true, если все значения подзапроса удовлетворяют условию.  </li>    
+                        </ul>                
+                    </p>
+
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">ALL</th>
+                            <th scope="col">ANY</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>x > ALL (1, 2) эквивалентно x > 2</td>
+                            <td>x > ANY (1, 2) эквивалентно x > 1</td>
+                          </tr>
+                          <tr>
+                            <td>x < ALL (1, 2) эквивалентно x < 1</td>
+                            <td>x < ANY (1, 2) эквивалентно x < 2</td>
+                          </tr>
+                          <tr>
+                            <td>x = ALL (1, 2) эквивалентно (x = 1) AND (x = 2)</td>
+                            <td>x = ANY (1, 2) эквивалентно x IN (1, 2)</td>
+                          </tr>
+                          <tr>
+                            <td>x <> ALL (1, 2) эквивалентно x NOT IN (1, 2)</td>
+                            <td>x <> ANY (1, 2) эквивалентно (x <> 1) OR (x <> 2)</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <i>Как правило сложности возникают в операциях сравнения с ALL и ANY. </i>
+                    </p>
+                    <p>
+                    Например, цена товара А, больше чем <span class="text-warning"> ALL </span> из списка товаров (B, C, D). Это значит, что A должна быть больше B, больше C, больше D. Больше чем все товары. Аналогом будет выступа MAX. Если A больше MAX(B, C, D), то A будте больше, чем все товары.
+                    </p>
+                    <p>
+                    Теперь ANY. Цена товара A, больше чем <span class="text-warning"> ANY </span> из списка товаров (B, C, D). Это значит, что достаточно, чтобы цена была больше ЛЮБОГО из товаров. Если она больше B, но меньше C и D, то нас это устраивает. Аналог MIN. Если цена больше минимального, то как минимум одно условие выполняется.
+                    </p>
+
+
+                    <h4>Ключевое слово EXISTS</h4>
+                    <p>
+                        <b>Принцип работы</b>
+                    </p>
+                    <p>
+                        <ol>
+                             <li>Внешним запросом SELECT * FROM users - берем поочередно строки, в отдельно взятой строке уже есть такие данные как id, name, ... нас интересует id (users.id - так он будет записан во внутреннем запросе) </li>
+                             <li>Для взятой строки из пункта 1, уже во внутреннем запросе проверяем условие (orders.user_id = users.id)</li>
+                             <li>Если во внутреннем запросе условия удовлетворяются, то запрос выводит строку взятую в пункте 1. Если нет то данная строка не выводится запросом.</li>
+                        </ol>
+                    </p>
+                    <p>
+                        <b>Примечание</b>
+                    </p>
+                    <p>
+                        Операторы SQL, использующие условие EXISTS, очень неэффективны, поскольку подзапрос повторно запускается для КАЖДОЙ строки в таблице внешнего запроса. Есть более эффективные способы написания большинства запросов, которые не используют условие EXISTS.
+                    </p>
+                    <img src="images/exists.png" class="img-fluid mt-2 mb-2 img-thumbnail" alt="...">
+                    <p>
+                        <i>
+                            Для тех кто не понял магию EXISTS, запомните его как 2 цикл for: <br>
+                            for user in users: <br>
+                            &ensp;for order in orders: <br>
+                            &emsp;if order.user_id == user: <br>
+                        </i>
+                    </p>
+
+
+                    <h4>Запросы, возвращающие несколько столбцов</h4>
+                    <p>
+                        SELECT * FROM cars WHERE <span class="text-warning"> (mark_id, model_id) </span> = <br>
+                         (SELECT  <span class="text-warning"> mark, model </span> FROM test_drive ) - главное соблюдать порядок колонок, и тип данных ! 
+                    </p>
+
+                    <h4> Подзапросы в конструкции FROM</h4>
+                    <p>
+                        SELECT * FROM cars JOIN (SELECT mark, model FROM test_drives WHERE date='2018-06-24') as td ON td.model = cars.model_id AND td.mark = cars.mark_d - без коментариев. Не забыть указать связь 
+                    </p>
+                    <p>
+                        SELECT * FROM (SELECT * FROM cars ORDER BY price DESC LIMIT 5) as best_cars ORDER BY price - правильная сортирока (отсортировали виртуальную таблицу, что бы не перегружать систему)
+                    </p>
+                    <div class="border border-primary border-2 p-2 m-2"> <span class="text-danger">Пример :</span> 
+                        <p>
+                        select * from (  <br>
+                        (select id, name, rating, 'Action' as genre from games where category_id = 1)  <br>
+                        UNION <br>
+                        (select id, name, rating, 'RPG' as genre from games where category_id = 2)  <br>
+                        UNION <br>
+                        (select id, name, rating, 'Adventure' as genre from games where category_id = 3)  <br>
+                        UNION  <br>
+                        (select id, name, rating, 'Strategy' as genre from games where category_id = 4)  <br>
+                        UNION <br>
+                        (select id, name, rating, 'Shooter' as genre from games where category_id = 5)  <br>
+                        ) as game <br>
+                        </p>
+                        <p>
+                           <i> При объединении при помощи UNION не надо давать название таблицам !!! </i>
+                        </p>
+                    </div>
+                    <p>
+                        <b>Вот пример еще страшнее !!!</b>
+                    </p>
+                    <div class="border border-primary border-2 p-2 m-2"> <span class="text-danger">Пример :</span> 
+                        <p>
+                            select * from  <br>
+                            (select * from  <br>
+                            (select * from  <br>
+                            ( <br>
+                            (select id, name, rating, 'Action' as genre from games where category_id = 1 order by rating desc LIMIT 2)   <br>
+                            UNION <br>
+                            (select id, name, rating, 'RPG' as genre from games where category_id = 2  order by rating desc LIMIT 2)  <br>
+                            UNION <br>
+                            (select id, name, rating, 'Adventure' as genre from games where category_id = 3  order by rating desc LIMIT 2)  <br>
+                            UNION  <br>
+                            (select id, name, rating, 'Strategy' as genre from games where category_id = 4  order by rating desc LIMIT 2)  <br>
+                            UNION <br>
+                            (select id, name, rating, 'Shooter' as genre from games where category_id = 5  order by rating desc LIMIT 2)  <br>
+                            )  <br>
+                            as game ORDER by rating DESC) <br>
+                            as game_1 limit 5 ) <br>
+                            as game_2 order By rating,id <br>
+                        
+                        </p>
+                    </div>
+
+
+
+                    <h4>Подзапросы в конструкции INSERT</h4>
+                    <p>
+                        INSERT INTO paypal_payments (SELECT id, user_id, date, amount FROM payments WHERE source = 'paypal') - вставляем все записи из таблицы payments 
+                    </p>
+                    <p>
+                        INSERT <span class="text-warning"> IGNORE </span> INTO paypal_payments (SELECT id, user_id, date, amount FROM payments WHERE source = 'paypal') - То есть если строка приводит к ошибке, то MySQL эту строку пропускает и переходит к следующей. 
+                    </p>
+                    <p>
+                        <span class="text-warning"> REPLACE</span> INTO paypal_payments (SELECT id, user_id, date, amount FROM payments WHERE source = 'paypal') - перезаписываем данные (если где то произошли изименения)
+                    </p>
+
+
+
+                    
+                    
+
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+            <div class="col col-xxl-2 col-xl-2">
+                <h5>Пока не придумал </h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Савин Илья Александрович</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Домой</a></li>
+                <li class="nav-item"><a href="https://vk.com/osnovvvva" class="nav-link px-2 text-body-secondary">О
+                        авторе</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Практика</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Вопросы</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"></a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

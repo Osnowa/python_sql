@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <script src="js/color-modes.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- скрипт для темы -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+    </svg>
+
+    <!-- Тема  -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    aria-pressed="true">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- навигационная панель  -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index1.html">На главную</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- первые -->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-12 col-sm-12 col-lg-6">
+                <img src="images/python-100732474-orig.jpg" class="d-block mx-lg-auto img-fluid img-thumbnail"
+                    alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6 text-center">
+                <h1>Помощь начинающим <br> Python - <br>разработчикам</h1>
+                <p class="opacity-50">Мне самому нужна помощь (</p>
+                <p><a href=""><button type="button" class="btn rounded-5" style="background-color:royalblue;">Я что-то
+                            загружаю ? </button></a></p>
+                <p><a href=""><button type="button" class="btn rounded-5" style="background-color: crimson;">Я куда-то
+                            перехожу ? </button></a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- предупреждаю -->
+    <figure class="text-center" style="margin-top: 200px; margin-bottom: 60px;">
+        <blockquote class="blockquote">
+            <p>Внимание ! Это конспект такого-же идиота, коим он и является, <br>поэтому не принимайте все конспекты
+                дословно ! <br>Возможны ошибки !</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            Я старался <cite title="Source Title">Честно</cite>
+        </figcaption>
+    </figure>
+
+    <div class="b-example-divider"></div>
+
+    <!-- карточки -->
+    <div class="px-4 py-5 mx-4">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="images/1638501631-1007-www.lookw.ru.jpg" class="bd-placeholder-img card-img-top"
+                            width="100%" height="225" role="img" focusable="false">
+                        <div class="card-body">
+                            <p class="card-text">Numpy and Pandas</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="numpy_pandas.html" class="btn btn-primary">Перейти</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">تعديل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="images/sql.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            role="img" focusable="false">
+                        <div class="card-body">
+                            <p class="card-text">SQL</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="sql_n_p.html" class="btn btn-primary">Перейти</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">عرض</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="images/go.png" class="bd-placeholder-img card-img-top"
+                            width="100%" height="225" role="img" focusable="false">
+                        <div class="card-body">
+                            <p class="card-text">GO</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary">Перейти</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">تعديل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="images/1638501631-1007-www.lookw.ru.jpg" class="bd-placeholder-img card-img-top"
+                            width="100%" height="225" role="img" focusable="false">
+                        <div class="card-body">
+                            <p class="card-text">Numpy and Pandas</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">تعديل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="images/1638501631-1007-www.lookw.ru.jpg" class="bd-placeholder-img card-img-top"
+                            width="100%" height="225" role="img" focusable="false">
+                        <div class="card-body">
+                            <p class="card-text">Numpy and Pandas</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">تعديل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="images/1638501631-1007-www.lookw.ru.jpg" class="bd-placeholder-img card-img-top"
+                            width="100%" height="225" role="img" focusable="false">
+                        <div class="card-body">
+                            <p class="card-text">Numpy and Pandas</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">تعديل</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+
+    <!-- деталь 1  -->
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="images/i+vl.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+                    height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Неизвестные Герои</h1>
+                <p class="lead">Некогда мы знали все купончики из Burger Kinga, теперь мне не хватает времени на
+                    кафешки, но прогресса в скилах так же не прибавилось.</p>
+                <p class="lead">Если увидите орфографическую ошибку, то обязательно напишите мне ! .</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- деталь 2 -->
+
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Почему в каждом конспекте разная стилистика ?
+                </h1>
+                <p class="lead">Мне и самому это не очень нравится, НО, деградация то-же развитие, и с каждым разом у
+                    меня
+                    получается делать сайт
+                    все лучше и лучше. Поэтому я обещаю
+                </p>
+                <p class="lead">
+                <ul>
+                    <li class="flex">
+                        <div>Привести все к единому стилю</div>
+                    </li>
+                    <li class="flex">
+                        <div>Набраться опыта, что бы не было стыдно за свое детище</div>
+                    </li>
+                    <li class="flex">
+                        <div>Хорошо кушать</div>
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="images/zmeyka.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+                    height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider">
+
+    <!-- идиот -->
+    <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Что за идиот решил это придумать</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="images/xaKdxiR4ND0.jpg" alt="" width="150em" height="150em">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Главный разработчик</h3>
+                <p>Он решил сделать сайт, не имея ни
+                    малейшего понятия, как это делается.</p>
+                <a href="#" class="icon-link">
+                    Call to action
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right" />
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="images/GTTCeQZcObA.jpg" alt="" width="150em" height="150em">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Редактор сайта</h3>
+                <p>Искать ошибки у себя же и сделать вид что их нет. Так можем
+                    только мы.</p>
+                <a href="#" class="icon-link">
+                    Call to action
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right" />
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="images/Ou_m4AzCECw.jpg" alt="" width="150em" height="150em">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Главный помошник - ( </h3>
+                <p>Мы не пишем то что правильно - мы пишем то, что понятно
+                    только нам ! </p>
+                <a href="#" class="icon-link">
+                    Call to action
+                    <svg class="bi">
+                        <use xlink:href="#chevron-right" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <!-- team spirit -->
+    <div class="text-center m-2">
+        <div class="card-header">
+            Team Spirit !!!
+        </div>
+        <div class="card-body m-2">
+            <img src="images/t5.jpg" style="height:400px;" class="img-fluid img-thumbnail">
+            <p>
+                <a href="#" class="btn btn-primary mt-4">Вперед</a>
+            </p>
+        </div>
+        <div class="card-footer text-body-secondary">
+            760 days ago
+        </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    
+    <!-- Подвал -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Савин Илья Александрович</p>
+
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+            </a>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Домой</a></li>
+                <li class="nav-item"><a href="https://vk.com/osnovvvva" class="nav-link px-2 text-body-secondary">О авторе</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Практика</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Вопросы</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary"></a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
